@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Perfecterize your post!</title>
+  </head>
+  <body>
+
+    <h1>Sorry your post didn't turn out right. Let's make it all better.</h1>
+    <h2> Here's what we've got so far</h2>
+
+    <h1> <%= @post.name %></h1>
+    <p> <%= @post.content %></p>
+
+    <h1>Edit Your Post</h1>
+
+    <form action="/posts/<%="#{@post.id}"%>"  method="post">
+
+      Title<input id="name" type="text" name="post_name">
+      Post <input id="content" type="text" name="post_content">
+
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <button id="submit">Submit</button>
+
+    </form>
+  </body>
+</html>
